@@ -120,7 +120,7 @@ test.describe('Dropdowns tests', () => {
         const titleOfDisabledOption = await disabledOption.textContent();
         await dropdown.selectOption({ value: `${disabledValue}` });
         const selectedValue = await page.locator('.select2-selection__rendered').nth(2).textContent();
-        // Bug: it is possible to select disabled value
+        // Bug: it is possible to select the disabled option
         // Ensure the disabled option is not selected
         expect(selectedValue).not.toBe(titleOfDisabledOption);
     })
