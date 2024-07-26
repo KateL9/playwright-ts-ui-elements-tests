@@ -16,21 +16,21 @@ test.describe('Checkboxes tests', () => {
         await expect(checkbox4).toBeDisabled();
     })
     
-    // test('Lambda Multiple Checkbox test', async ({ page }) => {
-    //     await page.goto('https://www.lambdatest.com/selenium-playground/checkbox-demo');
-    //     const checkAllBtn = page.locator('input#box');
-    //     const checkboxes = page.locator('div.input-body input[type="checkbox"]');
-    //     // const checkboxes = await page.locator('div.input-body input[type="checkbox"]').all(); - .all() - returns array. 
-    //     // await doesn't work for 'for each' for(let checkbox in checkboxes) {
-    //     //     await expect(checkbox).not.toBeChecked();
-    //     // }
-    //     for(let i = 0; i < await checkboxes.count(); i++) {
-    //         await expect(checkboxes.nth(i)).not.toBeChecked();
-    //     }
+    test('Lambda Multiple Checkbox test', async ({ page }) => {
+        await page.goto('https://www.lambdatest.com/selenium-playground/checkbox-demo');
+        const checkAllBtn = page.locator('input#box');
+        const checkboxes = page.locator('div.input-body input[type="checkbox"]');
+        // const checkboxes = await page.locator('div.input-body input[type="checkbox"]').all(); - .all() - returns array. 
+        // await doesn't work for 'for each' for(let checkbox in checkboxes) {
+        //     await expect(checkbox).not.toBeChecked();
+        // }
+        for(let i = 0; i < await checkboxes.count(); i++) {
+            await expect(checkboxes.nth(i)).not.toBeChecked();
+        }
         
-    //     await checkAllBtn.click();
-    //     for(let i = 0; i < await checkboxes.count(); i++) {
-    //         await expect(checkboxes.nth(i)).toBeChecked();
-    //     }
-    // })
+        await checkAllBtn.click();
+        for(let i = 0; i < await checkboxes.count(); i++) {
+            await expect(checkboxes.nth(i)).toBeChecked();
+        }
+    })
 })
