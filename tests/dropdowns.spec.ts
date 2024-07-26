@@ -24,7 +24,7 @@ test.describe('Dropdowns tests', () => {
         ]);
         await expect(multiSelect).toHaveValues(['California', 'Florida', 'Texas']);
         
-        // Validate the selection
+        // One more way to validate the selection instead of toHaveValues()
         // const selectedOptions = await multiSelect.evaluate((select: HTMLSelectElement) => {
         //     let arrayOfSelects = Array.from(select.selectedOptions);
         //     return arrayOfSelects.map(option => option.value);
