@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Modal window test', () => {
-    test('Single Modal Window', async ({ page }) => {
+    test('Single modal window', async ({ page }) => {
         await page.goto('https://www.lambdatest.com/selenium-playground/bootstrap-modal-demo');
         const launchModalBtn = page.locator('button[data-target="#myModal"]');
         await launchModalBtn.click();
