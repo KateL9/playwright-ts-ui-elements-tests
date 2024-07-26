@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Input fields tests', () => {
-    test('Lambda Single Input Field test', async ({ page }) => {
+    test('Lambda single input field test', async ({ page }) => {
         await page.goto('https://www.lambdatest.com/selenium-playground/simple-form-demo');
         const inputField = page.locator('input#user-message');
         console.log(await inputField.getAttribute('placeholder'));
@@ -15,7 +15,7 @@ test.describe('Input fields tests', () => {
         await expect(enteredMessage).toContainText('test');
     })
     
-    test('Lambda Two Input Fields test', async ({ page }) => {
+    test('Lambda two input fields test', async ({ page }) => {
         await page.goto('https://www.lambdatest.com/selenium-playground/simple-form-demo');
         const firstNumberInput = page.locator('input#sum1');
         const secondNumberInput = page.locator('input#sum2');
