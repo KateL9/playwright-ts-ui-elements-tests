@@ -19,7 +19,10 @@ test.describe('Frames test', () => {
         const frame = page.frameLocator('iframe#firstFr');
         const innerFrame = frame.frameLocator('iframe[src="innerFrame"]');
         if (innerFrame) {
-            await innerFrame.locator('input[name="email"]').fill('test@email.com');
+           const emailInput = innerFrame.locator('input[name="email"]');
+           await emailInput.fill('test@email.com');
+            // Assert that the input field contains the expected value
+            await expect(emailInput).toHaveValue('test@email.com');
         } else {
             throw new Error('Frame not found');
         }
